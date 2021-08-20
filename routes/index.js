@@ -29,7 +29,7 @@ router.post('/posts', async function (req, res) {
 });
 
 router.get('/posts/:id', async function (req, res) {
-  let post = await Post.findById(req.params.id);
+  let post = await Post.findOne({where:{id:req.params.id}});
 
   res.render('post', { post });
 });
