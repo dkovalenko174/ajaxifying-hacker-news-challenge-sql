@@ -1,5 +1,5 @@
 const express = require('express');
-let {Post} = require('../db/models');
+const { Post } = require('../db/models');
 const router = express.Router();
 
 /* GET home page. */
@@ -13,9 +13,8 @@ router.get('/posts', async function (req, res) {
 });
 
 router.post('/posts/:id/vote', async function (req, res) {
-  let findPost = await Post.findOne({where:{id:req.params.id}});
+  const findPost = await Post.findOne({where:{id:req.params.id}});
   await findPost.increment('votes', { by: 1 });
-
   res.redirect('/posts');
 });
 
@@ -29,8 +28,7 @@ router.post('/posts', async function (req, res) {
 });
 
 router.get('/posts/:id', async function (req, res) {
-  let post = await Post.findOne({where:{id:req.params.id}});
-
+  const post = await Post.findOne({where:{id:req.params.id}});
   res.render('post', { post });
 });
 
