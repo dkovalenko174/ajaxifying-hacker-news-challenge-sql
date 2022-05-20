@@ -3,7 +3,7 @@ const Layout = require('./Layout');
 
 module.exports = function Home({ posts }) {
   return (
-    <Layout title="Page title">
+    <Layout>
       <header>
         <h1>Hacker News</h1>
         <p>
