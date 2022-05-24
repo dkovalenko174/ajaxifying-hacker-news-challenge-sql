@@ -27,7 +27,7 @@ router.post('/posts/:id/vote', async (req, res) => {
   res.redirect('/posts');
 });
 
-router.delete('/:id', async (req, res, next) => {
+router.delete('/:id', async (req, res) => {
   // Создайте здесь логику для удаления постов
 });
 
