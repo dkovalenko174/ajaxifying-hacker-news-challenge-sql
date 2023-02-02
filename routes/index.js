@@ -29,8 +29,12 @@ router.post('/posts/:id/vote', async (req, res) => {
   // res.redirect('/posts');
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/posts/:id', async (req, res) => {
   // Создайте здесь логику для удаления постов
+  const { id } = req.params;
+  await Post.destroy({ where: { id } });
+  console.log('---> DELETE- params: ', id);
+  res.end();
 });
 
 router.post('/posts', async (req, res) => {
