@@ -24,7 +24,9 @@ router.get('/posts', async (req, res) => {
 router.post('/posts/:id/vote', async (req, res) => {
   const findPost = await Post.findOne({ where: { id: req.params.id } });
   await findPost.increment('votes', { by: 1 });
-  res.redirect('/posts');
+  res.json(findPost);
+  // console.log('!!!findPost --->', findPost);
+  // res.redirect('/posts');
 });
 
 router.delete('/:id', async (req, res) => {

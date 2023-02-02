@@ -12,8 +12,8 @@ module.exports = function Layout({ children }) {
         {/* application.css is where you put your styles */}
         <link rel="stylesheet" href="/stylesheets/application.css" />
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" />
-        <script src="/js/application.js" />
+        <script defer src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" />
+        <script defer src="/js/application.js" />
       </head>
       <body>
         {children}

@@ -18,7 +18,7 @@ module.exports = function Home({ posts }) {
         {posts.map((post) => (
           <article id={post.id} key={post.id}>
             <form method="post" action={`/posts/${post.id}/vote`} className="inline">
-              <button type="submit" name="submit_param" value="submit_value" className="fa fa-sort-desc vote-button upvote-button" />
+              <button data-btn_id={post.id} type="submit" name="submit_param" value="submit_value" className="fa fa-sort-desc vote-button upvote-button" />
             </form>
             <h2><a href={`/posts/${post.id}`}>{post.title}</a></h2>
             <p>
